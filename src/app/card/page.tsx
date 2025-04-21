@@ -54,7 +54,8 @@ export default function CardPage() {
   }
 
   return (
-    <div className="min-h-screen text-white p-20 relative">
+    
+    <div className="min-h-screen text-white p-20 relative "style={{ backgroundImage: "url('/images/backgroud.JPG')" }}>
       <div className="absolute top-6 left-110 z-50">
         <Link href="/">
           <button className="bg-gray-400 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg shadow transition">

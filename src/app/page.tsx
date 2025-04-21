@@ -4,14 +4,14 @@ import './globals.css'
 export default function Home() {
   return (
     <div
-      className="min-h-screen w-full bg-cover bg-center bg-no-repeat"
+      className="min-h-screen text-white p-20 relative bg-cover bg-center bg-no-repeat"
       style={{ backgroundImage: "url('/images/backgroud.JPG')" }}
     >
       <header className="text-center mb-10 pt-16">
-        <h1 className="text-3xl sm:text-4xl font-serif text-pink-100 leading-relaxed drop-shadow-md">
+        <h1 className="text-3xl sm:text-3xl font-serif text-pink-100 leading-relaxed drop-shadow-md">
           這是我寫給周不要再花錢賭博
         </h1>
-        <p className="text-lg sm:text-2xl font-serif text-pink-50 pt-5 drop-shadow-md">
+        <p className="text-lg sm:text-xl font-serif text-pink-50 pt-5 drop-shadow-md">
           我叫他candycoups
         </p>
       </header>
