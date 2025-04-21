@@ -8,7 +8,7 @@ export default function Home() {
       style={{ backgroundImage: "url('/images/backgroud.JPG')" }}
     >
       <header className="text-center mb-10 pt-16">
-        <h1 className="text-3xl sm:text-3xl font-serif text-pink-100 leading-relaxed drop-shadow-md">
+        <h1 className="text-3xl sm:text-2xl font-serif text-pink-100 leading-relaxed drop-shadow-md">
           這是我寫給周不要再花錢賭博
         </h1>
         <p className="text-lg sm:text-xl font-serif text-pink-50 pt-5 drop-shadow-md">
