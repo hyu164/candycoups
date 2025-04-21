@@ -11,14 +11,13 @@
   --font-mono: 'Courier New', monospace;
 }
 body {
-  background-image: url('/background.JPG');
-  background-size: cover;
-  background-position: center;
+  background-image: url('/images/backgroud.jpg');
+  background-size: contain;
   background-repeat: no-repeat;
-  margin: 0;
-  min-height: 100vh;   /* 改成這樣，避免多餘捲軸 */
-  color: var(--foreground);
-  font-family: var(--font-sans);
+  background-position: center;
+  background-attachment: fixed;
+  background-color: #222;
+  min-height: 100vh;
 }
 
 
