@@ -1,3 +1,5 @@
+const path = require('path')
+const fs = require('fs')
 export default function handler(req, res) {
   const cardsDir = path.join(process.cwd(), 'public/card')
   try {
