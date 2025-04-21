@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 
-export default function cardPage() {
+export default function CardPage() {
   const [randomCards, setRandomCards] = useState<string[]>([]) // 改為存放兩張隨機卡片
   const [allCards, setAllCards] = useState<string[]>([]) // 存放所有卡片路徑
   const [isAnimating, setIsAnimating] = useState(false)
