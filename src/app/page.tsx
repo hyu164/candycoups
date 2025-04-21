@@ -5,7 +5,7 @@ import './globals.css'
 export default function Home() {
   return (
     <div
-    className="min-h-screen w-full bg-cover bg-center bg-no-repeat bg-fixed"
+    className="min-h-screen w-full bg-cover bg-center bg-no-repeat"
     style={{ backgroundImage: "url('/images/backgroud.JPG')" }}
     >
       <header className="text-center mb-10">
