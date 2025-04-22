@@ -20,8 +20,8 @@ export default function Home() {
             <Image
               src="/album/loveletter-1.jpeg"
               alt="Button Icon"
-              width={300}
-              height={100}
+              width={150}
+              height={50}
               className="object-cover"
             />
           </button>
@@ -31,8 +31,8 @@ export default function Home() {
             <Image
               src="/album/mini12.jpg"
               alt="Button Icon"
-              width={300}
-              height={100}
+              width={150}
+              height={50}
               className="object-cover"
             />
           </button>
