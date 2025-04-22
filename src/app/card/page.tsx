@@ -10,7 +10,7 @@ export default function CardPage({ params }: { params: { poolId: string } }) {
   const [showCardPopup, setShowCardPopup] = useState(false)
   const cardsRef = useRef<HTMLDivElement>(null)
   const { poolId } = params  
-
+ 
   useEffect(() => {
     async function fetchCards() {
       try {
