@@ -23,10 +23,15 @@ export default function handler(
     const files = fs.readdirSync(cardsDir)
     const cards = files
       .filter(file => /\.(jpg|jpeg|png|gif|webp)$/i.test(file))
-      .map(file => `/card2/pool-${pool}/${file}`) 
+      .map(file => `/card2/pool-${pool}/${file}`)
+
+    if (cards.length === 0) {
+      return res.status(404).json({ error: '卡池內無圖片' })
+    }
 
     res.status(200).json({ cards })
-  } catch (_error) {
+  } catch (error) {
+    console.error('讀取卡片目錄錯誤:', error)
     res.status(500).json({ error: '無法讀取卡片目錄' })
   }
 }
