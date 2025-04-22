@@ -3,14 +3,29 @@ import { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 
-export default function CardPage({ params }: { params: { poolId: string } }) {
+export default function CardRootPage(){
   const [randomCards, setRandomCards] = useState<string[]>([])
   const [allCards, setAllCards] = useState<string[]>([])
   const [isAnimating, setIsAnimating] = useState(false)
   const [showCardPopup, setShowCardPopup] = useState(false)
   const cardsRef = useRef<HTMLDivElement>(null)
 
+ 
+  useEffect(() => {
+    async function fetchCards() {
+      try {
+        const response = await fetch(`/api/card`)
+        const { cards } = await response.json()
+        setAllCards(cards)
+      } catch (error) {
+        console.error('無法獲取卡片列表:', error)
+        setAllCards([])
+      }
+    }
+    fetchCards()
+  },) 
   
+
   const drawTwoRandomCards = () => {
     if (allCards.length < 2 || isAnimating) return
 
