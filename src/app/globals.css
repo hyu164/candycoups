@@ -84,5 +84,21 @@ body {
     opacity: 0;
   }
 }
+/* Navbar */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  z-index: 10; /* navbar 層級較高 */
+}
 
+/* 圖片容器 */
+.image-container {
+  position: absolute; /* 或 relative */
+  top: 100px; /* 根據需要調整位置 */
+  z-index: 1; /* 圖片層級較低，避免擋住 navbar */
+}
 
