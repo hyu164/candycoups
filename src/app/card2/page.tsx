@@ -13,7 +13,7 @@ export default function CardPage() {
   useEffect(() => {
     async function fetchCards() {
       try {
-        const response = await fetch('/api/card')
+        const response = await fetch('/api/card2')
         const { cards } = await response.json()
         setAllCards(cards)
       } catch (error) {
@@ -48,7 +48,7 @@ export default function CardPage() {
   return (
     <div
       className="min-h-screen text-white p-4 md:p-20 relative bg-cover bg-center"
-      style={{ backgroundImage: "url('/images/background2.JPG')" }}
+      style={{ backgroundImage: "url('/images/background-12.jpg')" }}
     >
       <div className="absolute top-4 left-4 z-50">
         <Link href="/">
@@ -64,7 +64,6 @@ export default function CardPage() {
           </button>
         </Link>
       </div>
-
       {/* 抽卡按鈕 */}
       <div className="flex justify-center mt-16 md:mt-32 mb-10">
         <button

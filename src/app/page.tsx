@@ -17,7 +17,7 @@ export default function Home() {
 </header>
 
       <main className="flex justify-center mt-8 z-10 relative">
-        <Link href="/card">
+        <Link href="/list">
           <button className="font-serif bg-pink-300 text-white px-6 py-3 
             rounded-lg shadow-lg hover:bg-pink-400 transition w-full">
             賭博啦～
