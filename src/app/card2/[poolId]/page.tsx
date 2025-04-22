@@ -4,9 +4,6 @@ import Image from 'next/image'
 import Link from 'next/link'
 import * as React from 'react' // 添加此行
 
-type CardPageProps = {
-  params: { poolId: string }
-}
 export default function CardPage({ params }: { params: Promise<{ poolId: string }> }) {
   const [randomCards, setRandomCards] = useState<string[]>([])
   const [allCards, setAllCards] = useState<string[]>([])
