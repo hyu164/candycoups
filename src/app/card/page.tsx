@@ -9,23 +9,8 @@ export default function CardPage({ params }: { params: { poolId: string } }) {
   const [isAnimating, setIsAnimating] = useState(false)
   const [showCardPopup, setShowCardPopup] = useState(false)
   const cardsRef = useRef<HTMLDivElement>(null)
-  const { poolId } = params  
- 
-  useEffect(() => {
-    async function fetchCards() {
-      try {
-        const response = await fetch(`/api/card2?pool=${poolId}`)
-        const { cards } = await response.json()
-        setAllCards(cards)
-      } catch (error) {
-        console.error('無法獲取卡片列表:', error)
-        setAllCards([])
-      }
-    }
-    fetchCards()
-  }, [poolId]) // 確保這裡是正確的依賴
-  
 
+  
   const drawTwoRandomCards = () => {
     if (allCards.length < 2 || isAnimating) return
 
