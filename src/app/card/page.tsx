@@ -76,7 +76,7 @@ export default function CardRootPage(){
           shadow-lg transition-all duration-300 transform hover:scale-105 text-sm md:text-base"
           disabled={isAnimating}
         >
-          {isAnimating ? "抽卡中..." : "按這裡可以抽"}
+          {isAnimating ? "抽卡中..." : "大卡一刷就沒有什麼不行的"}
         </button>
       </div>
 
