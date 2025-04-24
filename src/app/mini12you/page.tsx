@@ -2,20 +2,19 @@
 import { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import * as React from 'react' // 添加此行
 
-export default function CardPage({ params }: { params: Promise<{ poolId: string }> }) {
+export default function CardRootPage(){
   const [randomCards, setRandomCards] = useState<string[]>([])
   const [allCards, setAllCards] = useState<string[]>([])
   const [isAnimating, setIsAnimating] = useState(false)
   const [showCardPopup, setShowCardPopup] = useState(false)
   const cardsRef = useRef<HTMLDivElement>(null)
-  const { poolId } = React.use(params)
 
+ 
   useEffect(() => {
     async function fetchCards() {
       try {
-        const response = await fetch(`/api/card2?pool=${poolId}`)
+        const response = await fetch(`/api/mini12you`)
         const { cards } = await response.json()
         setAllCards(cards)
       } catch (error) {
@@ -24,7 +23,8 @@ export default function CardPage({ params }: { params: Promise<{ poolId: string 
       }
     }
     fetchCards()
-  }, [poolId]) 
+  },) 
+  
 
   const drawTwoRandomCards = () => {
     if (allCards.length < 2 || isAnimating) return
@@ -51,7 +51,7 @@ export default function CardPage({ params }: { params: Promise<{ poolId: string 
   return (
     <div
       className="min-h-screen text-white p-4 md:p-20 relative bg-cover bg-center"
-      style={{ backgroundImage: "url('/images/background-12.jpg')" }}
+      style={{ backgroundImage: "url('/album/mini12 you.JPG')" }}
     >
       <div className="absolute top-4 left-4 z-50">
         <Link href="/">
@@ -67,15 +67,23 @@ export default function CardPage({ params }: { params: Promise<{ poolId: string 
           </button>
         </Link>
       </div>
+      <div className="absolute top-4 left-4 z-50 pt-16">
+        <Link href="/mini12">
+          <button className="bg-gray-400 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg shadow transition text-sm md:text-base">
+            ←  mini12 
+          </button>
+        </Link>
+      </div>
+
       {/* 抽卡按鈕 */}
-      <div className="flex justify-center mt-16 md:mt-32 mb-10">
+      <div className="flex justify-center mt-30 md:mt-32 mb-16">
         <button
           onClick={drawTwoRandomCards}
           className="bg-gray-500 hover:bg-gray-400 text-white font-bold py-3 px-6 md:py-4 md:px-8 rounded-lg 
           shadow-lg transition-all duration-300 transform hover:scale-105 text-sm md:text-base"
           disabled={isAnimating}
         >
-          {isAnimating ? "抽卡中..." : "按這裡可以抽"}
+          {isAnimating ? "抽卡中..." : "大卡一刷就沒有什麼不行的"}
         </button>
       </div>
 
