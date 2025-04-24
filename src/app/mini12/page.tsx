@@ -21,7 +21,7 @@ export default function Home() {
           </button>
         </Link>
       </div>
-     <main className="flex flex-col items-center ">
+     <main className="flex flex-col items-center mt-10 ">
         <Link href="/mini12blue">
           <button className="hover:opacity-80">
             <Image

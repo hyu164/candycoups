@@ -9,8 +9,8 @@ export default function CardRootPage(){
   const [isAnimating, setIsAnimating] = useState(false)
   const [showCardPopup, setShowCardPopup] = useState(false)
   const cardsRef = useRef<HTMLDivElement>(null)
-
- 
+  
+  
   useEffect(() => {
     async function fetchCards() {
       try {
@@ -49,6 +49,9 @@ export default function CardRootPage(){
   }
 
   return (
+    <>
+   <audio src="/music/Pretty u.mp3" autoPlay loop controls style={{ display: 'none' }} />
+
     <div
       className="min-h-screen text-white p-4 md:p-20 relative bg-cover bg-center"
       style={{ backgroundImage: "url('/images/background2.JPG')" }}
@@ -120,5 +123,6 @@ export default function CardRootPage(){
         </div>
       )}
     </div>
+    </>
   )
 }
