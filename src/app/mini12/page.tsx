@@ -3,6 +3,8 @@ import Image from 'next/image'
 
 export default function Home() {
   return (
+    <>
+    <audio src="/music/LOVE, MONEY, FAME.mp3" autoPlay loop controls style={{ display: 'none' }} />
     <div
     className="min-h-screen text-white p-4 md:p-20 relative bg-cover bg-center"
     style={{ backgroundImage: "url('/images/background-12.jpg')" }}
@@ -46,5 +48,6 @@ export default function Home() {
         </Link>
       </main>
   </div>
+  </>
 )
 }

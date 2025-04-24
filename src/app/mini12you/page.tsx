@@ -49,6 +49,9 @@ export default function CardRootPage(){
   }
 
   return (
+    <>
+    <audio src="/music/LOVE, MONEY, FAME.mp3" autoPlay loop controls style={{ display: 'none' }} />
+
     <div
       className="min-h-screen text-white p-4 md:p-20 relative bg-cover bg-center"
       style={{ backgroundImage: "url('/album/mini12 you.JPG')" }}
@@ -127,5 +130,6 @@ export default function CardRootPage(){
         </div>
       )}
     </div>
+    </>
   )
 }

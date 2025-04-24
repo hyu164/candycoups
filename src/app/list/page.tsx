@@ -15,7 +15,7 @@ export default function Home() {
         </Link>
       </div>
      <main className="flex flex-col items-center ">
-        <Link href="/card">
+        <Link href="/loveletter">
           <button className="hover:opacity-80">
             <Image
               src="/album/loveletter-1.jpeg"
