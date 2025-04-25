@@ -3,6 +3,58 @@ import { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 
+export function BackgroundMusic() {
+  const audioRef = useRef<HTMLAudioElement>(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  useEffect(() => {
+    const audio = audioRef.current
+    if (!audio) return
+
+    const handleLoadedMetadata = () => {
+      const duration = audio.duration
+      // 避免跳到結尾，隨機前80%
+      const randomTime = Math.random() * duration * 0.8
+      audio.currentTime = randomTime
+      audio.play()
+      setIsPlaying(true)
+    }
+
+    audio.addEventListener('loadedmetadata', handleLoadedMetadata)
+    // 若已載入（快取情境）
+    if (audio.readyState >= 1) handleLoadedMetadata()
+
+    return () => {
+      audio.removeEventListener('loadedmetadata', handleLoadedMetadata)
+    }
+  }, [])
+
+  const togglePlay = () => {
+    if (!audioRef.current) return;
+    if (isPlaying) {
+      audioRef.current.pause();
+    } else {
+      audioRef.current.play();
+    }
+    setIsPlaying(!isPlaying);
+  };
+
+  return (
+       <div>
+    <audio
+      ref={audioRef}
+      src="/music/LOVE, MONEY, FAME.mp3"
+      loop
+      style={{ display: 'none' }}
+    />
+      <button onClick={togglePlay} className="absolute top-1 right-4 z-50 pt-20 
+      px-40 py-30 text-4xl">
+        {isPlaying ? "⏸️" : "▶️"}
+      </button>
+    </div>
+  );
+}
+
 export default function CardRootPage(){
   const [randomCards, setRandomCards] = useState<string[]>([])
   const [allCards, setAllCards] = useState<string[]>([])
@@ -50,8 +102,7 @@ export default function CardRootPage(){
 
   return (
     <>
-    <audio src="/music/LOVE, MONEY, FAME.mp3" autoPlay loop controls style={{ display: 'none' }} />
-
+    <BackgroundMusic />
     <div
       className="min-h-screen text-white p-4 md:p-20 relative bg-cover bg-center"
       style={{ backgroundImage: "url('/album/mini12 blue.JPG')" }}
