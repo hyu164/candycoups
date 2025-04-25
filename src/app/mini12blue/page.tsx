@@ -80,7 +80,7 @@ export default function CardRootPage(){
       </div>
 
       {/* 抽卡按鈕 */}
-      <div className="flex justify-center mt-30 md:mt-32 mb-16">
+      <div className="flex justify-center mt-30 md:mt-32 mb-16 z-50">
         <button
           onClick={drawTwoRandomCards}
           className="bg-gray-500 hover:bg-gray-400 text-white font-bold py-3 px-6 md:py-4 md:px-8 rounded-lg 
