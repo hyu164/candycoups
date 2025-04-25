@@ -41,7 +41,7 @@ export default function BackgroundMusic({ src }: { src: string }) {
       <audio ref={audioRef} src={src} loop style={{ display: "none" }} />
       <button
         onClick={togglePlay}
-        className="absolute top- right-8 z-50 pt-10 px-40 py-30 text-4xl"
+        className="absolute top-4 right-4 z-50 pt-6 px-30 py-30 text-xl"
       >
         {isPlaying ? "⏸️" : "▶️"}
       </button>
